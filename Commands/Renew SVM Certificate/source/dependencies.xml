@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dependencies>
+    <entity type="CacheQuery" name="fdb0ba3c-baef-464e-bd10-4a203f3f9e15" uuid="fdb0ba3c-baef-464e-bd10-4a203f3f9e15" version="1.0.2" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="SqlDataProviderType" name="OnCommand Unified Manager_6.0" uuid="3ace200a_ba30_443f_bf0f_059cd6e0f973" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="996cd5c6-f743-4a9c-9e41-21aaaee81b7c" uuid="996cd5c6-f743-4a9c-9e41-21aaaee81b7c" version="1.0.1" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="2999a28b-d304-482b-a828-55e60f65e8a0" uuid="2999a28b-d304-482b-a828-55e60f65e8a0" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="SqlDataProviderType" name="OnCommand Unified Manager_5.2.X for Clustered Data ONTAP" uuid="6ee5e2a9-dacf-445d-a700-37d346526809" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="DictionaryEntry" name="Cluster" uuid="49f5f09e-dcae-4922-98aa-0b4a58f27fda" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="26a35bc6-f895-437a-b532-ceea623a5bb6" uuid="26a35bc6-f895-437a-b532-ceea623a5bb6" version="1.0.2" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="DictionaryEntry" name="IPSpace" uuid="e54ac722-5304-42f4-907d-9033dc4c3d8b" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="SqlDataProviderType" name="OnCommand Unified Manager_6.3, 6.4" uuid="ddc7d0f2-2474-44f0-b89b-f26902b4872a" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="68e34c0d-86a9-4ed0-89f8-0563ff74d22b" uuid="68e34c0d-86a9-4ed0-89f8-0563ff74d22b" version="1.0.1" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="DictionaryEntry" name="Node" uuid="a8437b8f-a5a5-4900-bc3c-e67f5b713057" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="DictionaryEntry" name="Export_Policy" uuid="7ff72b2a-2a6f-430b-932d-eb1061233c22" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="DictionaryEntry" name="Efficiency_Policy" uuid="ac7bfb22-e1bb-4148-bf28-e2bf3bea36b1" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="DictionaryEntry" name="QoS_Policy_Group" uuid="3f6e9813-16e2-46ce-b7ab-f0c83ca72b5d" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="d4fdb72c-9011-4f92-8985-3a83959bf0ef" uuid="d4fdb72c-9011-4f92-8985-3a83959bf0ef" version="1.0.1" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="DictionaryEntry" name="Volume" uuid="54ad014d-062b-4c49-97f0-9e291646ec1a" version="1.0.1" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="2e773282-60fd-4f2f-b824-619ecf365c11" uuid="2e773282-60fd-4f2f-b824-619ecf365c11" version="1.0.1" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="717c054e-87de-463b-bac5-69c7ed5283ae" uuid="717c054e-87de-463b-bac5-69c7ed5283ae" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="SqlDataProviderType" name="OnCommand Unified Manager_6.2" uuid="691dcc58_6a89_43c0_9258_747752f8ee17" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="4ab03d7b-a056-41e5-ac5f-7b0e8771997c" uuid="4ab03d7b-a056-41e5-ac5f-7b0e8771997c" version="1.0.1" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="DictionaryEntry" name="Vserver" uuid="27bfb32f-baa1-4571-abb5-c644c132ceea" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="5e31a288-dff5-4246-8ac8-56139ed6e3fe" uuid="5e31a288-dff5-4246-8ac8-56139ed6e3fe" version="1.0.1" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="DictionaryEntry" name="Snapshot_Policy" uuid="17befd19-c47e-43d1-b050-5197e3254e7b" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="fc28720f-02eb-456a-a343-aca5a77ef72f" uuid="fc28720f-02eb-456a-a343-aca5a77ef72f" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="ea2a4164-7618-43a4-a283-1f0e50dbb672" uuid="ea2a4164-7618-43a4-a283-1f0e50dbb672" version="1.0.1" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="cf194404-945e-4abf-8f65-32bc7b652a13" uuid="cf194404-945e-4abf-8f65-32bc7b652a13" version="1.0.1" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="DictionaryEntry" name="Schedule" uuid="a576587e-c4c3-479c-8aee-ee3e03d2ad09" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="SqlDataProviderType" name="OnCommand Unified Manager_6.1" uuid="bc4aac33_0347_11e3_9ae7_0050569093a5" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="cf2a2ca6-d729-4139-b0b9-7d997674e28a" uuid="cf2a2ca6-d729-4139-b0b9-7d997674e28a" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="SqlDataProviderType" name="OnCommand Unified Manager_7.0,7.1" uuid="d3483508-8a4a-42c3-aa78-112b317f2edf" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="fb120ffa-a0b9-48c8-aedb-5cff8f99c68c" uuid="fb120ffa-a0b9-48c8-aedb-5cff8f99c68c" version="1.0.0" certification="NETAPP">
+        <available-in-packs/>
+    </entity>
+    <entity type="CacheQuery" name="73b11c82-f1b4-416b-ab95-b232a7a744ce" uuid="73b11c82-f1b4-416b-ab95-b232a7a744ce" version="1.0.1" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="DictionaryEntry" name="Aggregate" uuid="e603ad9b-e582-4037-83d6-dd747a49f57f" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="ac90d623-1b25-46e7-907d-307365627c32" uuid="ac90d623-1b25-46e7-907d-307365627c32" version="1.0.1" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="Scheme" name="cm_storage" uuid="7311a1b7-cdea-4f1c-b045-0e5b61fcbf6f" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="7d5edda3-93c6-40bc-b4b5-17e25b004666" uuid="7d5edda3-93c6-40bc-b4b5-17e25b004666" version="1.0.1" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="DictionaryEntry" name="Quota_Policy" uuid="bef8610f-d092-41bd-99dd-5c15a912f33a" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="dd07b1ad-e815-4558-ac3a-096db5a3c2f4" uuid="dd07b1ad-e815-4558-ac3a-096db5a3c2f4" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="d8052334-0b2d-4c83-894d-f72f4fb3a80c" uuid="d8052334-0b2d-4c83-894d-f72f4fb3a80c" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="d8c5c5bf-3621-4c6e-b020-0e1277dfff8b" uuid="d8c5c5bf-3621-4c6e-b020-0e1277dfff8b" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="SqlDataProviderType" name="OnCommand Unified Manager_5.1.X for Clustered Data ONTAP" uuid="11f4f8a8-3931-4427-a5c1-a0f2d5c07d3a" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="acafaf6a-9ff5-4489-887f-114a6d346111" uuid="acafaf6a-9ff5-4489-887f-114a6d346111" version="1.0.2" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="c58bb567-383f-4b3e-a559-110dd8b065f6" uuid="c58bb567-383f-4b3e-a559-110dd8b065f6" version="1.0.1" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="8f985914-6d36-40b4-89d0-c2f85ae24192" uuid="8f985914-6d36-40b4-89d0-c2f85ae24192" version="1.0.0" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="587cd7e4-04b8-4cbe-b7f3-86a91ff8b285" uuid="587cd7e4-04b8-4cbe-b7f3-86a91ff8b285" version="1.0.1" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="2baf616e-ec2f-4a50-b27f-f4473d173f5d" uuid="2baf616e-ec2f-4a50-b27f-f4473d173f5d" version="1.0.1" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+    <entity type="CacheQuery" name="5135e152-cb3f-4f3a-87f3-55756db68dd8" uuid="5135e152-cb3f-4f3a-87f3-55756db68dd8" version="1.0.1" certification="NETAPP">
+        <available-in-packs>
+            <pack name="WFA pack for managing Clustered Data ONTAP" uuid="0c95a36a-b905-4305-bf29-00883fa79c7e" version="1.2.2" certification="NETAPP"/>
+        </available-in-packs>
+    </entity>
+</dependencies>

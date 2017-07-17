@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<commandDefinition name="Renew a SVM certificate (self-signed)" samplingIntervalInSeconds="60" stringRepresentation="VserverName" timeoutInSeconds="600" type="STANDARD">
+    <certification>NONE</certification>
+    <uuid>4d9aae5a-7f06-4c3d-b369-263c84f3eb7a</uuid>
+    <version>1.0.0</version>
+    <command-implementations>
+        <command-implementation>
+            <command>param (
+  [parameter(Mandatory=$true, HelpMessage=&quot;Cluster Name or IP address&quot;)]
+  [string]$Cluster,
+
+  [parameter(Mandatory=$true, HelpMessage=&quot;Vserver name&quot;)]
+  [string]$VserverName,
+  
+  [parameter(Mandatory=$true, HelpMessage=&quot;Number of days the new certificate should be valid (Max 3650 days = 10 years).&quot;)]
+  [int]$DaysValid
+
+)
+
+# connect to controller
+Connect-WfaCluster $Cluster
+
+# Retrieve the existing vserver certificate
+$cert = Get-NcSecurityCertificate -Vserver $VserverName
+
+# Only continue if we found exactly 1 certificate
+if ($cert.length -ne 1) {
+    throw &quot;Could not identify correct certificate&quot;
+}
+
+
+Get-WFALogger -Info -message $(&quot;Found certificate &quot; + $cert.CommonName + &quot; on Vserver &quot; + $VserverName)
+
+# Convert the certificate to byte array and then to X509 object
+$enc = [system.Text.Encoding]::UTF8
+$X509cert = New-Object -TypeName System.Security.Cryptography.X509Certificates.X509Certificate2
+$X509cert.Import($enc.GetBytes($cert.PublicCertificate))
+
+# Safety checks: Check if Issuer and Subject are the same (in this case it is a self-signed certificate) and certificate type is server
+Get-WFALogger -Info -message $(&quot;Verifying that certificate is self-signed&quot;)
+if ($X509cert.Issuer -ne $X509cert.Subject) {
+	throw &quot;Certificate is not self-signed&quot;
+}
+Get-WFALogger -Info -message $(&quot;Verifying that certificate is of type server&quot;)
+if ($cert.Type -ne &quot;server&quot;) { 
+        throw &quot;Certificate is not a server certificate!&quot;
+}
+
+
+# get all required values form the old certificate
+$certvalues = @{}
+$certvalues.CertificateAuthority = $cert.CertificateAuthority
+$certvalues.CommonName = $cert.CommonName
+$certvalues.Country = $cert.Country
+$certvalues.EmailAddress = $cert.EmailAddress
+$certvalues.ExpirationDate = $cert.ExpirationDateDT
+$certvalues.Locality = $cert.Locality
+$certvalues.Organization = $cert.Organization
+$certvalues.OrganizationUnit = $cert.OrganizationUnit
+$certvalues.Size = $cert.Size
+$certvalues.State = $cert.State
+$certvalues.SerialNumber = $cert.SerialNumber
+
+# Log all values (just for safety and easier troubleshooting)
+Get-WFALogger -Info -message $(&quot;The existing certificate has the following properties:&quot;)
+foreach ($key in $certvalues.Keys) {
+	$value = $certvalues.$key
+        Get-WFALogger -Info -message $($key + &quot; = &quot; + $certvalues.$key )
+}
+
+# Capture SSL config (as it needs to be re-created for the new certificate)
+Get-WFALogger -Info -message $(&quot;Capturing SSL configuration&quot;)
+
+$SSLConf = Get-NcSecuritySsl -Vservercontext $VserverName
+if ($SSLConf.length -ne 1 ) {
+	throw &quot;Could not retrieve SSL Configuration&quot;
+} 
+
+# Remove the old certificate
+Get-WFALogger -Info -message $(&quot;Removing old certificate&quot;)
+Remove-NcSecurityCertificate -CommonName $certvalues.CommonName -type server -SerialNumber $certvalues.SerialNumber -CertificateAuthority $certvalues.CertificateAuthority -Vserver $VserverName -Confirm:$false
+Get-WFALogger -Info -message $(&quot;Creating new certificate&quot;)
+New-NcSecurityCertificate -CommonName $certvalues.CommonName -Type server -Size $certvalues.Size -Country $certvalues.Country -State $certvalues.State -Locality $certvalues.Locality -Organization $certvalues.Organization -OrganizationUnit $certvalues.OrganizationUnit -EmailAddress $certvalues.EmailAddress -Vserver $VserverName -ExpireDays $DaysValid -Confirm:$False
+
+# Get the new certificate
+$newCert = Get-NcSecurityCertificate -Vserver $VserverName -CommonName $certvalues.CommonName -Type server
+   
+# Adjust SSL Configuration to new certificate
+Get-WFALogger -Info -message $(&quot;Re-creating the SSL configuration for the new certificate&quot;)
+#Get-WFALogger -Info -message $(&quot;Debug: Set-NcSecuritySsl -Vserver &quot; + $VserverName +&quot; -CertificateAuthority &quot; + $newCert.CertificateAuthority + &quot; -CertificateSerialNumber &quot; + $newCert.SerialNumber + &quot; -CommonName &quot; + $newCert.CommonName + &quot; -EnableServerAuthentication &quot; + $SSLConf.ServerAuthenticationEnabled + &quot; -EnableClientAuthentication &quot; + $SSLConf.ClientAuthenticationEnabled + &quot; -Confirm:$False	&quot;)
+$newCA = $newCert.CertificateAuthority
+$newSerialnum = $newCert.SerialNumber
+$newCommonName = $newCert.CommonName
+$serverEnabled = $SSLConf.ServerAuthenticationEnabled
+$clientEnabled = $SSLConf.ClientAuthenticationEnabled
+$cmd =   &quot;Set-NcSecuritySsl -Vserver $VserverName -CertificateAuthority $newCA -CertificateSerialNumber $newSerialnum -CommonName $newCommonName&quot;
+if ($SSLConf.ServerAuthenticationEnabled -eq $true) {$cmd += ' -EnableServerAuthentication $true'} else { $cmd += ' -EnableServerAuthentication $false'}
+if ($SSLConf.ClientAuthenticationEnabled -eq $true) {$cmd += ' -EnableClientAuthentication $true'} else { $cmd += ' -EnableClientAuthentication $false'}
+$cmd += ' -Confirm:$false'
+#Get-WFALogger -Info -message $(&quot;Executing command: &quot; + $cmd)
+#Invoke-Expression $cmd
+
+# Workaround for bug in powershell toolkit (see http://community.netapp.com/t5/Microsoft-Cloud-and-Virtualization-Discussions/quot-The-expression-is-missing-a-value-quot-with-Set-NcSecuritySsl-Get/m-p/127763)
+$cmd2 = &quot;&lt;security-ssl-modify&gt;&lt;server-authentication-enabled&gt;$serverEnabled&lt;/server-authentication-enabled&gt;&lt;client-authentication-enabled&gt;$clientEnabled&lt;/client-authentication-enabled&gt;&lt;certificate-authority&gt;$newCA&lt;/certificate-authority&gt;&lt;certificate-serial-number&gt;$newSerialnum&lt;/certificate-serial-number&gt;&lt;common-name&gt;$newCommonName&lt;/common-name&gt;&lt;vserver&gt;$VserverName&lt;/vserver&gt;&lt;/security-ssl-modify&gt;&quot;
+Get-WFALogger -Info -message $(&quot;Invoking ZAPI: &quot; + $cmd2 )
+Invoke-NcSystemApi -VserverContext $VserverName $cmd2
+
+
+
+</command>
+            <commandLanguage>POWER_SHELL</commandLanguage>
+        </command-implementation>
+    </command-implementations>
+    <parameter-mappings>
+        <parameter-mapping attribute="cluster.primary_address" objectName="Vserver" parameterName="Cluster">
+            <dictionary-entry>27bfb32f-baa1-4571-abb5-c644c132ceea</dictionary-entry>
+        </parameter-mapping>
+        <parameter-mapping objectName="DaysValid" parameterName="DaysValid"/>
+        <parameter-mapping attribute="name" objectName="Vserver" parameterName="VserverName">
+            <dictionary-entry>27bfb32f-baa1-4571-abb5-c644c132ceea</dictionary-entry>
+        </parameter-mapping>
+    </parameter-mappings>
+    <congruenceTest></congruenceTest>
+    <description>Renews a self-signed certificate of a SVM/vServer. Keeps all certificate-fields of the existing certificate.
+</description>
+    <minSoftwareVersions>Clustered Data Ontap 8.3</minSoftwareVersions>
+    <parameter-definitions>
+        <parameter-definition description="Cluster Name or IP address" isMandatory="true" name="Cluster" type="String">
+            <uuid>94dcb6f7-a71b-4421-ac0b-a20392426a10</uuid>
+        </parameter-definition>
+        <parameter-definition description="Number of days the new certificate should be valid (Max 3650 days = 10 years)." isMandatory="true" name="DaysValid" type="Integer">
+            <uuid>b139421a-0087-41e9-8af7-a32096f8910b</uuid>
+        </parameter-definition>
+        <parameter-definition description="Vserver name" isMandatory="true" name="VserverName" type="String">
+            <uuid>fda28fd1-f5c2-4da8-b46a-2e4a075468df</uuid>
+        </parameter-definition>
+    </parameter-definitions>
+    <reservationScript></reservationScript>
+    <schemeNames>cm_storage</schemeNames>
+</commandDefinition>
